@@ -67,3 +67,4 @@ try {
     console.error(error);
     resultText.textContent = "Video yüklənmədi. Linki yoxla və yenidən cəhd et.";
 }
+});
