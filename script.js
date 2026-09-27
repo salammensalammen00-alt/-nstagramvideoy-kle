@@ -15,7 +15,7 @@ pasteBtn.addEventListener("click", async () => {
   }
 });
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const url = input.value.trim();
 
@@ -27,11 +27,43 @@ form.addEventListener("submit", (e) => {
     alert("Düzgün link daxil et.");
     return;
   }
+  
+result.classList.remove("hidden");
+resultText.textContent = "Video hazırlanır...";
 
-  result.classList.remove("hidden");
-  resultText.textContent = "Bu demo yalnız linki qəbul edir. Real video faylının hazırlanması backend/API ilə qoşulmalıdır.";
-});
+try {
+    const response = await fetch(
+        "https://video-backend-cgkh.onrender.com/api/download",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                url: url
+            })
+        }
+    );
 
-downloadBtn.addEventListener("click", () => {
-  alert("Real yükləmə üçün backend bağlantısı hələ əlavə edilməyib.");
-});
+    if (!response.ok) {
+        throw new Error("Video yüklənə bilmədi.");
+    }
+
+    const blob = await response.blob();
+
+    const downloadUrl = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+
+    a.href = downloadUrl;
+    a.download = "video.mp4";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    URL.revokeObjectURL(downloadUrl);
+
+    resultText.textContent = "Video uğurla yükləndi!";
+} catch (error) {
+    console.error(error);
+    resultText.textContent = "Video yüklənmədi. Linki yoxla və yenidən cəhd et.";
+}
