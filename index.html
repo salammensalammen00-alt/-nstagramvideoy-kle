@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoYukle — Video Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="logo">▶</div>
+      <h1>Videonu yüklə</h1>
+      <p class="subtitle">Instagram və TikTok video linkini aşağıya yapışdır.</p>
+
+      <form id="downloadForm">
+        <div class="input-wrap">
+          <input id="urlInput" type="url" placeholder="https://..." autocomplete="off" required>
+          <button type="button" id="pasteBtn">Yapışdır</button>
+        </div>
+        <button class="main-btn" type="submit">Videonu tap</button>
+      </form>
+
+      <div id="result" class="result hidden">
+        <div class="status-icon">✓</div>
+        <div>
+          <strong>Link qəbul edildi</strong>
+          <p id="resultText"></p>
+        </div>
+        <button id="downloadBtn" class="download-btn">Yüklə</button>
+      </div>
+
+      <p class="note">Demo versiyadır. Real Instagram/TikTok yükləməsi üçün server/API inteqrasiyası əlavə edilməlidir.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
