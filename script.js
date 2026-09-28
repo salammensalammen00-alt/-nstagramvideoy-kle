@@ -26,10 +26,8 @@ form.addEventListener("submit", async (e) => {
   } catch {
     alert("Düzgün link daxil et.");
     return;
-  }
-  
+  resultText.innerHTML = '<div class="loading-spinner"></div> Video hazırlanır...';
 result.classList.remove("hidden");
-resultText.textContent = "Video hazırlanır...";
 
 try {
     const response = await fetch(
