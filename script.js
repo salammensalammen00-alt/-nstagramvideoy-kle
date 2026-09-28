@@ -5,10 +5,13 @@ const resultText = document.getElementById("resultText");
 const pasteBtn = document.getElementById("pasteBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 
-let currentDownloadUrl = null;
+let videoBlob = null;
 
 
-// YAPIŞDIR düyməsi
+// =========================
+// YAPIŞDIR
+// =========================
+
 pasteBtn.addEventListener("click", async () => {
   try {
     const text = await navigator.clipboard.readText();
@@ -19,24 +22,25 @@ pasteBtn.addEventListener("click", async () => {
   } catch (error) {
     input.focus();
 
-    alert(
-      "Clipboard icazəsi verilmədi. Linki əl ilə yapışdır."
-    );
+    alert("Linki əl ilə yapışdır.");
   }
 });
 
 
-// VİDEONU TAP düyməsi
+// =========================
+// VİDEONU TAP
+// =========================
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const url = input.value.trim();
 
-  // Link boşdursa
   if (!url) {
     alert("Video linkini daxil et.");
     return;
   }
+
 
   // Linki yoxla
   try {
@@ -46,18 +50,19 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-  // Köhnə linki təmizlə
-  if (currentDownloadUrl) {
-    URL.revokeObjectURL(currentDownloadUrl);
-    currentDownloadUrl = null;
-  }
 
-  // Nəticə bölməsini göstər
+  // Köhnə videonu təmizlə
+  videoBlob = null;
+
+
+  // Nəticəni göstər
   result.classList.remove("hidden");
 
-  // Yüklənmə animasiyası
+
+  // Yüklənmə yazısı
   resultText.innerHTML =
     '<div class="loading-spinner"></div> Video hazırlanır...';
+
 
   try {
 
@@ -77,28 +82,25 @@ form.addEventListener("submit", async (e) => {
     );
 
 
-    // Server səhv qaytarıbsa
     if (!response.ok) {
-      throw new Error("Video yüklənə bilmədi.");
+      throw new Error("Video tapılmadı.");
     }
 
 
-    // Videonu götür
-    const blob = await response.blob();
+    // Videonu yadda saxla
+    videoBlob = await response.blob();
 
 
-    // Yükləmə linkini hazırla
-    currentDownloadUrl = URL.createObjectURL(blob);
-
-
-    // Hazır olduğunu göstər
+    // Hazırdır
     resultText.textContent =
-      "Video hazırdır! Aşağıdakı «Yüklə» düyməsinə bas.";
+      "Video hazırdır! «Yüklə» düyməsinə bas.";
 
 
   } catch (error) {
 
     console.error(error);
+
+    videoBlob = null;
 
     resultText.textContent =
       "Video yüklənmədi. Linki yoxla və yenidən cəhd et.";
@@ -106,19 +108,65 @@ form.addEventListener("submit", async (e) => {
 });
 
 
-// YÜKLƏ düyməsi
-downloadBtn.addEventListener("click", () => {
+// =========================
+// YÜKLƏ
+// =========================
 
-  if (!currentDownloadUrl) {
+downloadBtn.addEventListener("click", async () => {
+
+  if (!videoBlob) {
     alert("Əvvəlcə videonu tap.");
     return;
   }
 
 
+  // Mobil cihaz üçün video linki yarat
+  const videoUrl = URL.createObjectURL(videoBlob);
+
+
+  // iPhone üçün paylaşma funksiyasını yoxla
+  if (navigator.share) {
+
+    try {
+
+      const file = new File(
+        [videoBlob],
+        "video.mp4",
+        {
+          type: "video/mp4"
+        }
+      );
+
+
+      // Fayl paylaşmaq mümkündürsə
+      if (
+        navigator.canShare &&
+        navigator.canShare({ files: [file] })
+      ) {
+
+        await navigator.share({
+          files: [file],
+          title: "Video",
+          text: "Video"
+        });
+
+        URL.revokeObjectURL(videoUrl);
+
+        return;
+      }
+
+    } catch (error) {
+
+      // İstifadəçi paylaşmanı bağlayıbsa
+      console.log("Paylaşma bağlandı.");
+    }
+  }
+
+
+  // Android və digər brauzerlər
   const a = document.createElement("a");
 
-  a.href = currentDownloadUrl;
-
+  a.href = videoUrl;
   a.download = "video.mp4";
 
   document.body.appendChild(a);
@@ -126,4 +174,11 @@ downloadBtn.addEventListener("click", () => {
   a.click();
 
   a.remove();
+
+
+  // Linki bir az sonra sil
+  setTimeout(() => {
+    URL.revokeObjectURL(videoUrl);
+  }, 3000);
+
 });
