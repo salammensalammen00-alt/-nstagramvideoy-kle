@@ -1,127 +1,650 @@
-* { box-sizing: border-box; }
+/* =========================================
+   InstaVideoYukle — Professional Style
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Inter, Arial, sans-serif;
-  background: radial-gradient(circle at top, #24304a 0, #10131b 45%, #080a0f 100%);
-  color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 50% -10%, #303b68 0%, #151c32 38%, #0b1020 100%);
+
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
 }
-.page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 24px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-.card {
-  width: 100%;
-  max-width: 620px;
-  padding: 38px 28px;
-  text-align: center;
-  background: rgba(20, 24, 35, .88);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 26px;
-  box-shadow: 0 24px 80px rgba(0,0,0,.45);
-  backdrop-filter: blur(16px);
-}
+
 .logo {
-  width: 64px; height: 64px;
-  margin: 0 auto 18px;
-  display: grid; place-items: center;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #ff2d55, #7c3cff);
-  font-size: 28px;
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    );
+
+    color: white;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px rgba(124, 58, 237, 0.35);
+
+    flex-shrink: 0;
 }
-h1 { margin: 0 0 10px; font-size: clamp(30px, 7vw, 46px); }
-.subtitle { margin: 0 auto 28px; color: #aeb6c8; line-height: 1.5; }
-.input-wrap {
-  display: flex;
-  gap: 9px;
-  padding: 7px;
-  background: #0d1018;
-  border: 1px solid #303747;
-  border-radius: 15px;
+
+.brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
-input {
-  min-width: 0;
-  flex: 1;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: white;
-  padding: 13px;
-  font-size: 15px;
+
+.brand span {
+    color: #a78bfa;
 }
-input::placeholder { color: #687186; }
-button {
-  border: 0;
-  cursor: pointer;
-  font-weight: 700;
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px 80px;
 }
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    text-align: center;
+
+    padding: 35px 0 55px;
+}
+
+.hero h1 {
+    max-width: 800px;
+
+    margin: 0 auto 18px;
+
+    font-size: clamp(34px, 7vw, 62px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd,
+        #f9a8d4
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.subtitle {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #aeb8d0;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   DOWNLOAD FORM
+   ========================================= */
+
+#downloadForm {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto;
+}
+
+
+/* INPUT AREA */
+
+.input-container {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.05);
+}
+
+#urlInput {
+    min-width: 0;
+    flex: 1;
+
+    height: 56px;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    padding: 0 16px;
+
+    font-size: 16px;
+}
+
+#urlInput::placeholder {
+    color: #77819b;
+}
+
+#urlInput:focus {
+    outline: none;
+}
+
+
+/* PASTE BUTTON */
+
 #pasteBtn {
-  padding: 0 14px;
-  border-radius: 10px;
-  background: #252c3b;
-  color: white;
-}
-.main-btn {
-  width: 100%;
-  margin-top: 13px;
-  padding: 16px;
-  border-radius: 13px;
-  color: white;
-  background: linear-gradient(135deg, #ff2d55, #7c3cff);
-  font-size: 16px;
-}
-.main-btn:hover, .download-btn:hover { filter: brightness(1.08); }
-.result {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 13px;
-  margin-top: 20px;
-  padding: 15px;
-  text-align: left;
-  border-radius: 15px;
-  background: #121827;
-  border: 1px solid #2d3749;
-}
-.result p { margin: 4px 0 0; color: #9ea8bb; font-size: 13px; word-break: break-word; }
-.status-icon {
-  width: 38px; height: 38px;
-  display: grid; place-items: center;
-  border-radius: 50%;
-  background: #183e2b;
-  color: #54e18b;
-}
-.download-btn {
-  padding: 11px 14px;
-  border-radius: 10px;
-  background: #fff;
-  color: #111;
-}
-.note { margin: 24px 0 0; color: #6f788b; font-size: 12px; line-height: 1.5; }
-.hidden { display: none; }
+    height: 50px;
 
-@media (max-width: 520px) {
-  .card { padding: 30px 17px; }
-  .input-wrap { flex-direction: column; padding: 8px; }
-  #pasteBtn { padding: 12px; }
-  .result { grid-template-columns: auto 1fr; }
-  .download-btn { grid-column: 1 / -1; width: 100%; }
+    padding: 0 20px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
-.loading-spinner {
-  width: 22px;
-  height: 22px;
-  border: 3px solid rgba(255,255,255,.25);
-  border-top-color: white;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+#pasteBtn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+#pasteBtn:active {
+    transform: scale(0.97);
+}
+
+
+/* DOWNLOAD BUTTON */
+
+#downloadBtn {
+    width: 100%;
+
+    height: 58px;
+
+    margin-top: 14px;
+
+    border: 0;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #6366f1
+    );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(99, 102, 241, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#downloadBtn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 17px 38px rgba(99, 102, 241, 0.40);
+}
+
+#downloadBtn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LOADING
+   ========================================= */
+
+#loading {
+    margin: 25px auto;
+
+    text-align: center;
+
+    color: #c4b5fd;
+}
+
+.loader {
+    width: 38px;
+    height: 38px;
+
+    margin: 0 auto 12px;
+
+    border: 4px solid rgba(255, 255, 255, 0.12);
+
+    border-top-color: #8b5cf6;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   RESULT
+   ========================================= */
+
+#result {
+    width: 100%;
+
+    margin-top: 25px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   SEO CONTENT
+   ========================================= */
+
+.seo-content,
+.how-it-works,
+.faq,
+.info {
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+.seo-content h2,
+.how-it-works h2,
+.faq h2,
+.info h2 {
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: 26px;
+
+    line-height: 1.25;
+}
+
+.seo-content p,
+.info p {
+
+    margin-bottom: 22px;
+
+    color: #b9c1d5;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.seo-content p:last-child,
+.info p:last-child {
+    margin-bottom: 0;
+}
+
+.seo-content strong {
+    color: #d8ccff;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.step {
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+
+    background: #7c3aed;
+
+    font-weight: 800;
+}
+
+.step h3 {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+}
+
+.step p {
+    color: #aeb8d0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FAQ
+   ========================================= */
+
+.faq details {
+
+    border-bottom: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+    padding: 18px 0;
+}
+
+.faq details:last-child {
+    border-bottom: 0;
+}
+
+.faq summary {
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: 700;
+
+    font-size: 17px;
+
+    list-style: none;
+
+    position: relative;
+
+    padding-right: 25px;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "+";
+
+    position: absolute;
+
+    right: 0;
+
+    color: #a78bfa;
+
+    font-size: 22px;
+}
+
+.faq details[open] summary::after {
+    content: "−";
+}
+
+.faq details p {
+
+    margin-top: 12px;
+
+    color: #aeb8d0;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+
+    padding: 30px 20px 40px;
+
+    text-align: center;
+
+    color: #68738e;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 18px 16px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 13px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    main {
+        padding:
+            15px 14px 60px;
+    }
+
+    .hero {
+        padding:
+            25px 0 40px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .input-container {
+        flex-direction: column;
+
+        padding: 7px;
+
+        border-radius: 16px;
+    }
+
+    #urlInput {
+        width: 100%;
+
+        height: 52px;
+
+        font-size: 15px;
+    }
+
+    #pasteBtn {
+        width: 100%;
+
+        height: 48px;
+    }
+
+    #downloadBtn {
+        height: 56px;
+
+        font-size: 16px;
+    }
+
+    .seo-content,
+    .how-it-works,
+    .faq,
+    .info {
+
+        padding: 23px 19px;
+
+        border-radius: 18px;
+    }
+
+    .seo-content h2,
+    .how-it-works h2,
+    .faq h2,
+    .info h2 {
+
+        font-size: 24px;
+    }
+
+    .seo-content p,
+    .info p {
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        padding: 19px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 33px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
 }
