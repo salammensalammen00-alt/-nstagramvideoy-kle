@@ -6,6 +6,7 @@ const pasteBtn = document.getElementById("pasteBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 
 let videoBlob = null;
+let videoUrl = null;
 
 
 // =========================
@@ -21,7 +22,6 @@ pasteBtn.addEventListener("click", async () => {
 
   } catch (error) {
     input.focus();
-
     alert("Linki əl ilə yapışdır.");
   }
 });
@@ -41,8 +41,6 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-
-  // Linki yoxla
   try {
     new URL(url);
   } catch {
@@ -50,19 +48,30 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-
   // Köhnə videonu təmizlə
   videoBlob = null;
 
+  if (videoUrl) {
+    URL.revokeObjectURL(videoUrl);
+    videoUrl = null;
+  }
 
   // Nəticəni göstər
   result.classList.remove("hidden");
 
+  // Yüklə düyməsini gizlət
+  downloadBtn.classList.add("hidden");
 
-  // Yüklənmə yazısı
+  // Köhnə önizləməni sil
+  const oldVideo = document.getElementById("videoPreview");
+
+  if (oldVideo) {
+    oldVideo.remove();
+  }
+
+  // Yüklənir
   resultText.innerHTML =
     '<div class="loading-spinner"></div> Video hazırlanır...';
-
 
   try {
 
@@ -81,20 +90,41 @@ form.addEventListener("submit", async (e) => {
       }
     );
 
-
     if (!response.ok) {
       throw new Error("Video tapılmadı.");
     }
 
-
     // Videonu yadda saxla
     videoBlob = await response.blob();
 
+    // Video URL
+    videoUrl = URL.createObjectURL(videoBlob);
 
-    // Hazırdır
-    resultText.textContent =
-      "Video hazırdır! «Yüklə» düyməsinə bas.";
+    // Video önizləməsi yarat
+    const video = document.createElement("video");
 
+    video.id = "videoPreview";
+    video.src = videoUrl;
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+
+    video.style.width = "100%";
+    video.style.maxWidth = "500px";
+    video.style.borderRadius = "16px";
+    video.style.marginTop = "15px";
+    video.style.display = "block";
+    video.style.marginLeft = "auto";
+    video.style.marginRight = "auto";
+
+    // Önizləməni əlavə et
+    resultText.innerHTML =
+      "✅ Video tapıldı! Aşağıdan videoya baxa bilərsən.";
+
+    result.appendChild(video);
+
+    // Yüklə düyməsini göstər
+    downloadBtn.classList.remove("hidden");
 
   } catch (error) {
 
@@ -103,7 +133,7 @@ form.addEventListener("submit", async (e) => {
     videoBlob = null;
 
     resultText.textContent =
-      "Video yüklənmədi. Linki yoxla və yenidən cəhd et.";
+      "❌ Video yüklənmədi. Linki yoxla və yenidən cəhd et.";
   }
 });
 
@@ -119,12 +149,9 @@ downloadBtn.addEventListener("click", async () => {
     return;
   }
 
+  const downloadUrl = URL.createObjectURL(videoBlob);
 
-  // Mobil cihaz üçün video linki yarat
-  const videoUrl = URL.createObjectURL(videoBlob);
-
-
-  // iPhone üçün paylaşma funksiyasını yoxla
+  // iPhone / iOS
   if (navigator.share) {
 
     try {
@@ -137,8 +164,6 @@ downloadBtn.addEventListener("click", async () => {
         }
       );
 
-
-      // Fayl paylaşmaq mümkündürsə
       if (
         navigator.canShare &&
         navigator.canShare({ files: [file] })
@@ -150,23 +175,22 @@ downloadBtn.addEventListener("click", async () => {
           text: "Video"
         });
 
-        URL.revokeObjectURL(videoUrl);
+        URL.revokeObjectURL(downloadUrl);
 
         return;
       }
 
     } catch (error) {
 
-      // İstifadəçi paylaşmanı bağlayıbsa
-      console.log("Paylaşma bağlandı.");
+      console.log("Paylaşma bağlandı və ya ləğv edildi.");
+
     }
   }
 
-
-  // Android və digər brauzerlər
+  // Android / digər brauzerlər
   const a = document.createElement("a");
 
-  a.href = videoUrl;
+  a.href = downloadUrl;
   a.download = "video.mp4";
 
   document.body.appendChild(a);
@@ -175,10 +199,8 @@ downloadBtn.addEventListener("click", async () => {
 
   a.remove();
 
-
-  // Linki bir az sonra sil
   setTimeout(() => {
-    URL.revokeObjectURL(videoUrl);
+    URL.revokeObjectURL(downloadUrl);
   }, 3000);
 
 });
