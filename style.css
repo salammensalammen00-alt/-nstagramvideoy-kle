@@ -394,3 +394,45 @@ a:hover {
 
     line-height: 1.2 !important;
 }
+/* 🎬 Videonu tap düyməsi */
+#downloadForm button:not(#pasteBtn) {
+    display: block !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 25px auto !important;
+    padding: 18px 25px !important;
+
+    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+    color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 18px !important;
+
+    font-size: 21px !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25) !important;
+    cursor: pointer !important;
+    transition: 0.2s ease !important;
+}
+
+#downloadForm button:not(#pasteBtn):hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35) !important;
+}
+
+#downloadForm button:not(#pasteBtn):active {
+    transform: scale(0.97) !important;
+}
+
+/* Telefon üçün */
+@media (max-width: 600px) {
+    #downloadForm button:not(#pasteBtn) {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 20px !important;
+        padding: 17px 20px !important;
+        border-radius: 17px !important;
+    }
+}
