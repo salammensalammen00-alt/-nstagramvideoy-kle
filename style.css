@@ -1,440 +1,375 @@
+/* ================================
+   Insta VideoYukle — Yeni Dizayn
+   Yalnız görünüş üçündür
+================================ */
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f6f7fb;
-  color: #171717;
-  line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f7faff;
+    color: #111827;
+    line-height: 1.6;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-  width: min(100% - 32px, 900px);
-  margin: 0 auto;
-}
-
-/* =========================
+/* ================================
    HEADER
-========================= */
+================================ */
 
 header {
-  background: #ffffff;
-  border-bottom: 1px solid #e9e9e9;
-  padding: 16px 0;
-}
-
-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111111;
-  color: #ffffff;
-  border-radius: 12px;
-  font-size: 21px;
-  font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.25);
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 19px;
-  font-weight: 700;
+/* Əgər logo yazısı varsa */
+
+header h1,
+.logo-text {
+    color: #111827;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  text-align: center;
-  padding: 55px 0 35px;
+header h1 span,
+.logo-text span {
+    color: #2563eb;
 }
 
-.hero h1 {
-  margin: 0 auto 14px;
-  max-width: 750px;
-  font-size: clamp(30px, 6vw, 48px);
-  line-height: 1.15;
-  font-weight: 800;
+/* ================================
+   ƏSAS HİSSƏ
+================================ */
+
+main {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 55px 20px 80px;
 }
 
+/* ================================
+   BAŞLIQ
+================================ */
+
+h1 {
+    font-size: clamp(38px, 7vw, 64px);
+    line-height: 1.08;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -1.5px;
+    color: #111827;
+    margin-bottom: 22px;
+}
+
+h1 span {
+    color: #2563eb;
+}
+
+h2 {
+    color: #111827;
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #4b5563;
+}
+
+/* ================================
+   AÇIQLAMA
+================================ */
+
+.subtitle,
 .hero p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: #666666;
-  font-size: 17px;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    text-align: center;
+    font-size: 19px;
+    color: #52627a;
 }
 
-/* =========================
-   DOWNLOAD BOX
-========================= */
-
-.download-box {
-  max-width: 650px;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 22px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
-}
-
-/* =========================
+/* ================================
    FORM
-========================= */
+================================ */
 
-#downloadForm {
-  width: 100%;
+form {
+    max-width: 780px;
+    margin: 30px auto 0;
 }
 
-.input-wrapper {
-  display: flex;
-  width: 100%;
-  gap: 10px;
+/* Link xanası */
+
+input[type="text"],
+input[type="url"] {
+    width: 100%;
+    height: 64px;
+    padding: 0 22px;
+    border: 2px solid #dbe5f5;
+    border-radius: 20px;
+    background: white;
+    color: #111827;
+    font-size: 17px;
+    outline: none;
+    transition: 0.2s ease;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
 }
 
-#urlInput {
-  flex: 1;
-  min-width: 0;
-  height: 56px;
-  padding: 0 17px;
-  border: 1px solid #dcdcdc;
-  border-radius: 14px;
-  background: #ffffff;
-  color: #111111;
-  font-size: 16px;
-  outline: none;
+input[type="text"]:focus,
+input[type="url"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
 }
 
-#urlInput:focus {
-  border-color: #111111;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+input::placeholder {
+    color: #9ca3af;
 }
+
+/* ================================
+   DÜYMƏLƏR
+================================ */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.2s ease;
+}
+
+/* Yapışdır */
 
 #pasteBtn {
-  height: 56px;
-  padding: 0 18px;
-  border: 0;
-  border-radius: 14px;
-  background: #eeeeee;
-  color: #111111;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
+    width: 100%;
+    min-height: 62px;
+    margin-top: 12px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    font-size: 19px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.22);
 }
 
 #pasteBtn:hover {
-  background: #e2e2e2;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.28);
 }
 
-/* =========================
-   🎬 VİDEONU TAP
-========================= */
-
-#findVideoBtn {
-  width: 100%;
-  min-height: 58px;
-  margin-top: 12px;
-  padding: 15px 20px;
-  border: 0;
-  border-radius: 14px;
-  background: #111111;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  display: block;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+#pasteBtn:active {
+    transform: scale(0.98);
 }
 
-#findVideoBtn:hover {
-  opacity: 0.9;
-}
+/* Videonu tap */
 
-#findVideoBtn:active {
-  transform: scale(0.98);
-}
-
-/* =========================
-   RESULT
-========================= */
-
-#result {
-  margin-top: 20px;
-  padding: 18px;
-  background: #fafafa;
-  border-radius: 16px;
-  text-align: center;
-}
-
-#result.hidden {
-  display: none;
-}
-
-#resultText {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333333;
-}
-
-/* =========================
-   VIDEO PREVIEW
-========================= */
-
-#videoPreview {
-  width: 100%;
-  max-width: 500px;
-  margin: 16px auto 0;
-  display: block;
-  border-radius: 16px;
-  background: #000000;
-}
-
-/* =========================
-   ⬇️ VİDEONU YÜKLƏ
-========================= */
-
-#downloadBtn {
-  width: 100%;
-  max-width: 500px;
-  min-height: 56px;
-  margin: 16px auto 0;
-  padding: 14px 20px;
-  border: 0;
-  border-radius: 14px;
-  background: #111111;
-  color: #ffffff;
-  font-size: 17px;
-  font-weight: 700;
-  cursor: pointer;
-  display: block;
-}
-
-#downloadBtn.hidden {
-  display: none;
-}
-
-#downloadBtn:hover {
-  opacity: 0.9;
-}
-
-/* =========================
-   LOADING
-========================= */
-
-.loading-spinner {
-  width: 22px;
-  height: 22px;
-  margin: 0 auto 10px;
-  border: 3px solid #dddddd;
-  border-top-color: #111111;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* =========================
-   SEO CONTENT
-========================= */
-
-.content-section {
-  max-width: 850px;
-  margin: 45px auto 0;
-  padding: 0 10px;
-}
-
-.content-section h2 {
-  margin-bottom: 12px;
-  font-size: 28px;
-  line-height: 1.25;
-}
-
-.content-section h3 {
-  margin-top: 28px;
-  margin-bottom: 8px;
-  font-size: 21px;
-}
-
-.content-section p {
-  color: #555555;
-}
-
-.content-section ul,
-.content-section ol {
-  padding-left: 22px;
-}
-
-.content-section li {
-  margin-bottom: 8px;
-}
-
-/* =========================
-   FAQ
-========================= */
-
-.faq {
-  max-width: 850px;
-  margin: 45px auto;
-  padding: 0 10px;
-}
-
-.faq h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.faq-item {
-  background: #ffffff;
-  padding: 18px;
-  margin-bottom: 12px;
-  border-radius: 14px;
-  border: 1px solid #eeeeee;
-}
-
-.faq-item h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
-}
-
-.faq-item p {
-  margin: 0;
-  color: #555555;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  margin-top: 60px;
-  padding: 30px 0;
-  background: #111111;
-  color: #ffffff;
-  text-align: center;
-}
-
-footer p {
-  margin: 5px 0;
-  color: #cccccc;
-  font-size: 14px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  .container {
-    width: min(100% - 20px, 900px);
-  }
-
-  header {
-    padding: 13px 0;
-  }
-
-  .logo {
-    width: 40px;
-    height: 40px;
-  }
-
-  .brand {
-    font-size: 17px;
-  }
-
-  .hero {
-    padding: 38px 0 25px;
-  }
-
-  .hero h1 {
-    font-size: 31px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .download-box {
-    padding: 16px;
-    border-radius: 17px;
-  }
-
-  .input-wrapper {
-    flex-direction: column;
-    gap: 9px;
-  }
-
-  #urlInput {
-    width: 100%;
-    height: 56px;
-  }
-
-  #pasteBtn {
-    width: 100%;
-    height: 52px;
-  }
-
-  #findVideoBtn {
-    width: 100%;
-    min-height: 58px;
+#downloadBtn,
+.download-btn {
+    display: block;
+    margin: 22px auto 0;
+    padding: 15px 30px;
+    border: 2px solid #2563eb;
+    border-radius: 999px;
+    background: white;
+    color: #2563eb;
     font-size: 18px;
-  }
-
-  #result {
-    padding: 14px;
-  }
-
-  .content-section,
-  .faq {
-    padding: 0 5px;
-  }
-
-  .content-section h2,
-  .faq h2 {
-    font-size: 24px;
-  }
+    font-weight: 700;
 }
 
-/* =========================
-   SMALL PHONES
-========================= */
+#downloadBtn:hover,
+.download-btn:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
 
-@media (max-width: 380px) {
+/* ================================
+   KARTLAR
+================================ */
 
-  .hero h1 {
-    font-size: 27px;
-  }
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 55px;
+}
 
-  #urlInput {
-    font-size: 15px;
-  }
+.feature,
+.card {
+    background: white;
+    border: 1px solid #e7eef8;
+    border-radius: 22px;
+    padding: 25px 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
 
-  #findVideoBtn {
-    min-height: 56px;
-    font-size: 17px;
-  }
+.feature h3,
+.card h3 {
+    color: #111827;
+    margin: 10px 0 5px;
+}
+
+.feature p,
+.card p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* ================================
+   MƏZMUN BÖLMƏLƏRİ
+================================ */
+
+section {
+    margin-top: 70px;
+}
+
+section h2 {
+    position: relative;
+    padding-left: 18px;
+}
+
+section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 5px;
+    border-radius: 10px;
+    background: #2563eb;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ================================
+   LİNKLƏR
+================================ */
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   MOBİL
+================================ */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 12px 16px;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        font-size: 25px;
+    }
+
+    main {
+        padding: 42px 14px 60px;
+    }
+
+    h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .subtitle,
+    .hero p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    input[type="text"],
+    input[type="url"] {
+        height: 62px;
+        border-radius: 18px;
+        font-size: 16px;
+    }
+
+    #pasteBtn {
+        min-height: 60px;
+        font-size: 18px;
+        border-radius: 17px;
+    }
+
+    #downloadBtn,
+    .download-btn {
+        font-size: 17px;
+        padding: 14px 26px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 40px;
+    }
+
+    .feature,
+    .card {
+        padding: 20px 10px;
+        border-radius: 18px;
+    }
+
+    section {
+        margin-top: 55px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    section p {
+        font-size: 17px;
+    }
+}
+
+/* ================================
+   ÇOX KİÇİK TELEFONLAR
+================================ */
+
+@media (max-width: 390px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature p {
+        font-size: 13px;
+    }
 }
