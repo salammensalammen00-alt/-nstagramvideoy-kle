@@ -1,411 +1,168 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- SEO -->
+    <title>Instagram və TikTok Video Yüklə | Pulsuz Video Yükləyici</title>
+    <meta name="description" content="Instagram və TikTok videolarını onlayn yüklə. Video linkini yapışdır və videonu asanlıqla telefonuna və ya kompüterinə endir. InstaVideoYukle pulsuz video yükləyicidir.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://instavideoyukle.com/">
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #f5f8ff;
-    color: #111827;
-    line-height: 1.6;
-}
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://instavideoyukle.com/">
+    <meta property="og:title" content="Instagram və TikTok Video Yüklə | InstaVideoYukle">
+    <meta property="og:description" content="Instagram və TikTok videolarını onlayn və pulsuz yüklə. Linki yapışdır, videonu endir.">
+    <meta property="og:site_name" content="InstaVideoYukle">
+    <meta property="og:locale" content="az_AZ">
 
-/* HEADER */
-.header {
-    width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 14px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6558836379736589" crossorigin="anonymous"></script>
 
-.logo {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #2563eb, #4f46e5);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: 800;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-}
+    <!-- CSS & Favicon -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 
-.brand {
-    font-size: 23px;
-    font-weight: 800;
-    color: #111827;
-}
-
-.brand span {
-    color: #2563eb;
-}
-
-/* MAIN */
-main {
-    width: 100%;
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 55px 20px 80px;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 7vw, 62px);
-    line-height: 1.08;
-    font-weight: 850;
-    letter-spacing: -1.8px;
-    color: #111827;
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    max-width: 700px;
-    margin: 0 auto 32px;
-    font-size: 19px;
-    color: #64748b;
-}
-
-/* FORM */
-#downloadForm {
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-}
-
-/* INPUT */
-.input-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-#urlInput {
-    width: 100%;
-    height: 64px;
-    padding: 0 20px;
-    border: 2px solid #dbe4f0;
-    border-radius: 18px;
-    background: #ffffff;
-    color: #111827;
-    font-size: 17px;
-    outline: none;
-    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
-    transition: 0.2s ease;
-}
-
-#urlInput:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
-}
-
-#urlInput::placeholder {
-    color: #9ca3af;
-}
-
-/* YAPIŞDIR */
-#pasteBtn {
-    width: 100%;
-    height: 58px;
-    border: none;
-    border-radius: 17px;
-    background: #eaf1ff;
-    color: #2563eb;
-    font-size: 18px;
-    font-weight: 750;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-#pasteBtn:hover {
-    background: #dce8ff;
-}
-
-/* 🎬 VIDEONU TAP */
-#mainSubmitBtn {
-    display: block !important;
-    width: 100% !important;
-    max-width: 430px !important;
-    height: 68px !important;
-
-    margin: 25px auto 0 !important;
-
-    border: none !important;
-    border-radius: 20px !important;
-
-    background: linear-gradient(135deg, #2563eb, #4f46e5) !important;
-    color: #ffffff !important;
-
-    font-size: 21px !important;
-    font-weight: 800 !important;
-
-    cursor: pointer !important;
-
-    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28) !important;
-
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease !important;
-}
-
-#mainSubmitBtn:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 16px 35px rgba(37, 99, 235, 0.35) !important;
-}
-
-#mainSubmitBtn:active {
-    transform: scale(0.97) !important;
-}
-
-/* LOADING */
-#loading {
-    margin: 30px auto;
-    text-align: center;
-}
-
-#loading p {
-    margin-top: 12px;
-    color: #64748b;
-    font-size: 17px;
-}
-
-.loader {
-    width: 42px;
-    height: 42px;
-    margin: auto;
-    border: 4px solid #dbe4f0;
-    border-top-color: #2563eb;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "InstaVideoYukle",
+      "url": "https://instavideoyukle.com/",
+      "description": "Instagram və TikTok videolarını onlayn yükləmək üçün pulsuz video yükləyici.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Android, iOS, Windows, macOS, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AZN"
+      }
     }
-}
+    </script>
+</head>
+<body>
 
-/* RESULT */
-#result {
-    margin: 30px auto;
-    max-width: 600px;
-}
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">▶</div>
+        <div class="brand"><span>Insta</span>VideoYukle</div>
+    </header>
 
-.hidden {
-    display: none !important;
-}
+    <!-- MAIN -->
+    <main>
+        <section class="hero">
+            <h1>Instagram və TikTok Video Yüklə</h1>
+            <p class="subtitle">Instagram və TikTok video linkini aşağıya yapışdır və videonu asanlıqla yüklə.</p>
 
-/* DOWNLOAD BUTTON */
-#downloadBtn {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 17px 25px;
-    border: none;
-    border-radius: 18px;
-    background: #16a34a;
-    color: white;
-    font-size: 19px;
-    font-weight: 800;
-    cursor: pointer;
-}
+            <!-- DOWNLOAD FORM -->
+            <form id="downloadForm">
+                <div class="input-container">
+                    <input
+                        type="url"
+                        id="urlInput"
+                        name="url"
+                        placeholder="Instagram və ya TikTok video linkini yapışdır..."
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="button" id="pasteBtn">Yapışdır</button>
+                </div>
 
-/* CONTENT */
-.seo-content,
-.how-it-works,
-.faq,
-.info {
-    margin-top: 75px;
-    background: #ffffff;
-    padding: 35px;
-    border-radius: 25px;
-    border: 1px solid #e5eaf2;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-}
+                <button type="submit" id="mainSubmitBtn" class="btn-primary">
+                    🎬 Videonu tap
+                </button>
+            </form>
 
-h2 {
-    color: #111827;
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 18px;
-}
+            <!-- Loading -->
+            <div id="loading" style="display:none;">
+                <div class="loader"></div>
+                <p>Video hazırlanır...</p>
+            </div>
 
-.seo-content h2:not(:first-child) {
-    margin-top: 40px;
-}
+            <!-- Result -->
+            <div id="result" class="hidden">
+                <div id="resultText"></div>
+                <button type="button" id="downloadBtn" class="btn-primary hidden">
+                    ⬇️ Videonu yüklə
+                </button>
+            </div>
+        </section>
 
-.seo-content p,
-.info p {
-    color: #64748b;
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
+        <!-- SEO CONTENT -->
+        <section class="seo-content">
+            <h2>Instagram Video Yüklə</h2>
+            <p>Instagram video yükləmək üçün videonun linkini Instagram tətbiqindən kopyala və yuxarıdakı xanaya yapışdır. Daha sonra <strong>“🎬 Videonu tap”</strong> düyməsinə bas.</p>
+            <p>InstaVideoYukle Instagram videolarını onlayn yükləmək üçün hazırlanmış sadə və istifadəsi rahat video yükləyicidir.</p>
 
-/* STEPS */
-.steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
+            <h2>TikTok Video Yüklə</h2>
+            <p>TikTok video yükləmək üçün TikTok-da videonun paylaşma bölməsindən linki kopyala və bu səhifədəki xanaya yapışdır.</p>
+            <p>Linki əlavə etdikdən sonra video yükləmə prosesini başlatmaq üçün <strong>“🎬 Videonu tap”</strong> düyməsinə toxun.</p>
 
-.step {
-    padding: 25px;
-    background: #f8faff;
-    border: 1px solid #e3eaf5;
-    border-radius: 20px;
-}
+            <h2>Pulsuz Onlayn Video Yükləyici</h2>
+            <p>InstaVideoYukle telefon, planşet və kompüterdən istifadə edilə bilən onlayn video yükləyicidir. Əlavə proqram quraşdırmadan video linkini yapışdıraraq yükləmə prosesini başlada bilərsən.</p>
+        </section>
 
-.step-number {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #2563eb;
-    color: white;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
+        <!-- HOW IT WORKS -->
+        <section class="how-it-works">
+            <h2>Videonu necə yükləmək olar?</h2>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h3>Video linkini kopyala</h3>
+                    <p>Instagram və ya TikTok-da yükləmək istədiyin videonun linkini kopyala.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h3>Linki yapışdır</h3>
+                    <p>Kopyaladığın video linkini yuxarıdakı sahəyə əlavə et.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h3>Videonu yüklə</h3>
+                    <p>“🎬 Videonu tap” düyməsinə toxun və videonu əldə et.</p>
+                </div>
+            </div>
+        </section>
 
-.step h3 {
-    margin-bottom: 8px;
-    color: #111827;
-}
+        <!-- FAQ -->
+        <section class="faq">
+            <h2>Tez-tez verilən suallar</h2>
+            <details>
+                <summary>Instagram videosunu necə yükləyə bilərəm?</summary>
+                <p>Instagram video linkini kopyala, bu səhifədəki link sahəsinə yapışdır və “🎬 Videonu tap” düyməsinə toxun.</p>
+            </details>
+            <details>
+                <summary>TikTok videosunu necə yükləyə bilərəm?</summary>
+                <p>TikTok-da videonun linkini kopyala və InstaVideoYukle saytındakı link sahəsinə yapışdır.</p>
+            </details>
+            <details>
+                <summary>InstaVideoYukle pulsuzdur?</summary>
+                <p>Saytın video yükləmə xidməti pulsuz istifadə üçün nəzərdə tutulub.</p>
+            </details>
+            <details>
+                <summary>Telefonda istifadə etmək mümkündür?</summary>
+                <p>Bəli. Sayt mobil cihazlarda da istifadə üçün hazırlanıb.</p>
+            </details>
+        </section>
 
-.step p {
-    color: #64748b;
-}
+        <!-- NOTE -->
+        <section class="info">
+            <h2>Vacib məlumat</h2>
+            <p>InstaVideoYukle üçüncü tərəf sosial media platforması deyil və Instagram və TikTok ilə rəsmi şəkildə əlaqəli deyil.</p>
+            <p>Yalnız özünüzə aid olan və ya yükləməyə icazəniz olan məzmunlardan istifadə edin.</p>
+        </section>
+    </main>
 
-/* FAQ */
-.faq details {
-    border-bottom: 1px solid #e5e7eb;
-    padding: 18px 0;
-}
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 InstaVideoYukle.com</p>
+    </footer>
 
-.faq details:last-child {
-    border-bottom: none;
-}
-
-.faq summary {
-    cursor: pointer;
-    font-weight: 750;
-    color: #111827;
-    font-size: 17px;
-}
-
-.faq details p {
-    margin-top: 12px;
-    color: #64748b;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: #94a3b8;
-    font-size: 14px;
-}
-
-/* MOBILE */
-@media (max-width: 700px) {
-
-    .header {
-        padding: 12px 15px;
-    }
-
-    .logo {
-        width: 44px;
-        height: 44px;
-        font-size: 22px;
-    }
-
-    .brand {
-        font-size: 20px;
-    }
-
-    main {
-        padding: 40px 14px 60px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-        letter-spacing: -1px;
-    }
-
-    .subtitle {
-        font-size: 17px;
-        line-height: 1.6;
-    }
-
-    #urlInput {
-        height: 60px;
-        font-size: 16px;
-    }
-
-    #pasteBtn {
-        height: 56px;
-    }
-
-    #mainSubmitBtn {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 64px !important;
-        font-size: 20px !important;
-        border-radius: 18px !important;
-    }
-
-    .seo-content,
-    .how-it-works,
-    .faq,
-    .info {
-        margin-top: 50px;
-        padding: 24px 18px;
-        border-radius: 20px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    .seo-content p,
-    .info p {
-        font-size: 16px;
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 390px) {
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .brand {
-        font-size: 18px;
-    }
-}
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
