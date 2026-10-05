@@ -1,8 +1,3 @@
-/* ================================
-   Insta VideoYukle — Yeni Dizayn
-   Yalnız görünüş üçündür
-================================ */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,424 +10,402 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #f7faff;
+    background: #f5f8ff;
     color: #111827;
     line-height: 1.6;
 }
 
-/* ================================
-   HEADER
-================================ */
-
-header {
-    background: rgba(255, 255, 255, 0.96);
+/* HEADER */
+.header {
+    width: 100%;
+    background: #ffffff;
     border-bottom: 1px solid #e5e7eb;
-    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
     background: linear-gradient(135deg, #2563eb, #4f46e5);
     color: white;
-    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
     font-weight: 800;
-    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
-/* Əgər logo yazısı varsa */
-
-header h1,
-.logo-text {
+.brand {
+    font-size: 23px;
+    font-weight: 800;
     color: #111827;
 }
 
-header h1 span,
-.logo-text span {
+.brand span {
     color: #2563eb;
 }
 
-/* ================================
-   ƏSAS HİSSƏ
-================================ */
-
+/* MAIN */
 main {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1050px;
     margin: 0 auto;
     padding: 55px 20px 80px;
 }
 
-/* ================================
-   BAŞLIQ
-================================ */
-
-h1 {
-    font-size: clamp(38px, 7vw, 64px);
-    line-height: 1.08;
-    font-weight: 800;
+/* HERO */
+.hero {
     text-align: center;
-    letter-spacing: -1.5px;
-    color: #111827;
-    margin-bottom: 22px;
+    max-width: 850px;
+    margin: 0 auto;
 }
 
-h1 span {
-    color: #2563eb;
-}
-
-h2 {
+.hero h1 {
+    font-size: clamp(38px, 7vw, 62px);
+    line-height: 1.08;
+    font-weight: 850;
+    letter-spacing: -1.8px;
     color: #111827;
-    font-size: clamp(28px, 5vw, 42px);
-    line-height: 1.15;
     margin-bottom: 20px;
 }
 
-p {
-    color: #4b5563;
-}
-
-/* ================================
-   AÇIQLAMA
-================================ */
-
-.subtitle,
-.hero p {
-    max-width: 720px;
-    margin: 0 auto 30px;
-    text-align: center;
+.subtitle {
+    max-width: 700px;
+    margin: 0 auto 32px;
     font-size: 19px;
-    color: #52627a;
+    color: #64748b;
 }
 
-/* ================================
-   FORM
-================================ */
-
-form {
-    max-width: 780px;
-    margin: 30px auto 0;
+/* FORM */
+#downloadForm {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
 }
 
-/* Link xanası */
+/* INPUT */
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-input[type="text"],
-input[type="url"] {
+#urlInput {
     width: 100%;
     height: 64px;
-    padding: 0 22px;
-    border: 2px solid #dbe5f5;
-    border-radius: 20px;
-    background: white;
+    padding: 0 20px;
+    border: 2px solid #dbe4f0;
+    border-radius: 18px;
+    background: #ffffff;
     color: #111827;
     font-size: 17px;
     outline: none;
-    transition: 0.2s ease;
     box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+    transition: 0.2s ease;
 }
 
-input[type="text"]:focus,
-input[type="url"]:focus {
+#urlInput:focus {
     border-color: #2563eb;
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
 }
 
-input::placeholder {
+#urlInput::placeholder {
     color: #9ca3af;
 }
 
-/* ================================
-   DÜYMƏLƏR
-================================ */
-
-button {
+/* YAPIŞDIR */
+#pasteBtn {
+    width: 100%;
+    height: 58px;
     border: none;
+    border-radius: 17px;
+    background: #eaf1ff;
+    color: #2563eb;
+    font-size: 18px;
+    font-weight: 750;
     cursor: pointer;
-    font-family: inherit;
     transition: 0.2s ease;
 }
 
-/* Yapışdır */
+#pasteBtn:hover {
+    background: #dce8ff;
+}
 
-#pasteBtn {
-    width: 100%;
-    min-height: 62px;
+/* 🎬 VIDEONU TAP */
+#mainSubmitBtn {
+    display: block !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    height: 68px !important;
+
+    margin: 25px auto 0 !important;
+
+    border: none !important;
+    border-radius: 20px !important;
+
+    background: linear-gradient(135deg, #2563eb, #4f46e5) !important;
+    color: #ffffff !important;
+
+    font-size: 21px !important;
+    font-weight: 800 !important;
+
+    cursor: pointer !important;
+
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28) !important;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease !important;
+}
+
+#mainSubmitBtn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 16px 35px rgba(37, 99, 235, 0.35) !important;
+}
+
+#mainSubmitBtn:active {
+    transform: scale(0.97) !important;
+}
+
+/* LOADING */
+#loading {
+    margin: 30px auto;
+    text-align: center;
+}
+
+#loading p {
     margin-top: 12px;
+    color: #64748b;
+    font-size: 17px;
+}
+
+.loader {
+    width: 42px;
+    height: 42px;
+    margin: auto;
+    border: 4px solid #dbe4f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* RESULT */
+#result {
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* DOWNLOAD BUTTON */
+#downloadBtn {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 17px 25px;
+    border: none;
     border-radius: 18px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: #16a34a;
     color: white;
     font-size: 19px;
-    font-weight: 700;
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.22);
+    font-weight: 800;
+    cursor: pointer;
 }
 
-#pasteBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.28);
+/* CONTENT */
+.seo-content,
+.how-it-works,
+.faq,
+.info {
+    margin-top: 75px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 25px;
+    border: 1px solid #e5eaf2;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
 }
 
-#pasteBtn:active {
-    transform: scale(0.98);
+h2 {
+    color: #111827;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 18px;
 }
 
-/* Videonu tap */
-
-#downloadBtn,
-.download-btn {
-    display: block;
-    margin: 22px auto 0;
-    padding: 15px 30px;
-    border: 2px solid #2563eb;
-    border-radius: 999px;
-    background: white;
-    color: #2563eb;
-    font-size: 18px;
-    font-weight: 700;
+.seo-content h2:not(:first-child) {
+    margin-top: 40px;
 }
 
-#downloadBtn:hover,
-.download-btn:hover {
+.seo-content p,
+.info p {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* STEPS */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.step {
+    padding: 25px;
+    background: #f8faff;
+    border: 1px solid #e3eaf5;
+    border-radius: 20px;
+}
+
+.step-number {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     background: #2563eb;
     color: white;
-    transform: translateY(-2px);
+    font-weight: 800;
+    margin-bottom: 15px;
 }
 
-/* ================================
-   KARTLAR
-================================ */
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin-top: 55px;
-}
-
-.feature,
-.card {
-    background: white;
-    border: 1px solid #e7eef8;
-    border-radius: 22px;
-    padding: 25px 16px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-}
-
-.feature h3,
-.card h3 {
+.step h3 {
+    margin-bottom: 8px;
     color: #111827;
-    margin: 10px 0 5px;
 }
 
-.feature p,
-.card p {
-    font-size: 14px;
+.step p {
     color: #64748b;
 }
 
-/* ================================
-   MƏZMUN BÖLMƏLƏRİ
-================================ */
-
-section {
-    margin-top: 70px;
+/* FAQ */
+.faq details {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 18px 0;
 }
 
-section h2 {
-    position: relative;
-    padding-left: 18px;
+.faq details:last-child {
+    border-bottom: none;
 }
 
-section h2::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 4px;
-    bottom: 4px;
-    width: 5px;
-    border-radius: 10px;
-    background: #2563eb;
+.faq summary {
+    cursor: pointer;
+    font-weight: 750;
+    color: #111827;
+    font-size: 17px;
 }
 
-section p {
-    font-size: 18px;
-    line-height: 1.8;
+.faq details p {
+    margin-top: 12px;
+    color: #64748b;
 }
 
-/* ================================
-   LİNKLƏR
-================================ */
-
-a {
-    color: #2563eb;
-    text-decoration: none;
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #94a3b8;
+    font-size: 14px;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* ================================
-   MOBİL
-================================ */
-
+/* MOBILE */
 @media (max-width: 700px) {
 
-    header {
-        padding: 12px 16px;
+    .header {
+        padding: 12px 15px;
     }
 
     .logo {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        font-size: 25px;
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+
+    .brand {
+        font-size: 20px;
     }
 
     main {
-        padding: 42px 14px 60px;
+        padding: 40px 14px 60px;
     }
 
-    h1 {
-        font-size: 42px;
+    .hero h1 {
+        font-size: 40px;
         letter-spacing: -1px;
     }
 
-    .subtitle,
-    .hero p {
+    .subtitle {
         font-size: 17px;
         line-height: 1.6;
     }
 
-    input[type="text"],
-    input[type="url"] {
-        height: 62px;
-        border-radius: 18px;
+    #urlInput {
+        height: 60px;
         font-size: 16px;
     }
 
     #pasteBtn {
-        min-height: 60px;
-        font-size: 18px;
-        border-radius: 17px;
+        height: 56px;
     }
 
-    #downloadBtn,
-    .download-btn {
-        font-size: 17px;
-        padding: 14px 26px;
+    #mainSubmitBtn {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 64px !important;
+        font-size: 20px !important;
+        border-radius: 18px !important;
     }
 
-    .features {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-top: 40px;
+    .seo-content,
+    .how-it-works,
+    .faq,
+    .info {
+        margin-top: 50px;
+        padding: 24px 18px;
+        border-radius: 20px;
     }
 
-    .feature,
-    .card {
-        padding: 20px 10px;
-        border-radius: 18px;
+    h2 {
+        font-size: 28px;
     }
 
-    section {
-        margin-top: 55px;
+    .seo-content p,
+    .info p {
+        font-size: 16px;
     }
 
-    section h2 {
-        font-size: 30px;
-    }
-
-    section p {
-        font-size: 17px;
+    .steps {
+        grid-template-columns: 1fr;
     }
 }
-
-/* ================================
-   ÇOX KİÇİK TELEFONLAR
-================================ */
 
 @media (max-width: 390px) {
 
-    h1 {
-        font-size: 36px;
+    .hero h1 {
+        font-size: 35px;
     }
 
-    .features {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .feature p {
-        font-size: 13px;
-    }
-}
-#downloadBtn {
-    display: block !important;
-    width: fit-content !important;
-    min-width: 280px !important;
-    margin: 25px auto 0 !important;
-
-    padding: 18px 38px !important;
-
-    font-size: 24px !important;
-    font-weight: 800 !important;
-
-    text-align: center !important;
-
-    border: 3px solid #2563eb !important;
-    border-radius: 50px !important;
-
-    background: white !important;
-    color: #2563eb !important;
-
-    line-height: 1.2 !important;
-}
-/* 🎬 Videonu tap düyməsi */
-#downloadForm button:not(#pasteBtn) {
-    display: block !important;
-    width: 100% !important;
-    max-width: 420px !important;
-    margin: 25px auto !important;
-    padding: 18px 25px !important;
-
-    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
-    color: #ffffff !important;
-
-    border: none !important;
-    border-radius: 18px !important;
-
-    font-size: 21px !important;
-    font-weight: 800 !important;
-    text-align: center !important;
-
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25) !important;
-    cursor: pointer !important;
-    transition: 0.2s ease !important;
-}
-
-#downloadForm button:not(#pasteBtn):hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35) !important;
-}
-
-#downloadForm button:not(#pasteBtn):active {
-    transform: scale(0.97) !important;
-}
-
-/* Telefon üçün */
-@media (max-width: 600px) {
-    #downloadForm button:not(#pasteBtn) {
-        width: 100% !important;
-        max-width: 100% !important;
-        font-size: 20px !important;
-        padding: 17px 20px !important;
-        border-radius: 17px !important;
+    .brand {
+        font-size: 18px;
     }
 }
