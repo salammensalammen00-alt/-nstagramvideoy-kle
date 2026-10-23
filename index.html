@@ -1,168 +1,139 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#111827">
-
-    <!-- SEO -->
-    <title>Instagram və TikTok Video Yüklə | Pulsuz Video Yükləyici</title>
-    <meta name="description" content="Instagram və TikTok videolarını onlayn yüklə. Video linkini yapışdır və videonu asanlıqla telefonuna və ya kompüterinə endir. InstaVideoYukle pulsuz video yükləyicidir.">
+    <title>Instagram Video İndir | Ücretsiz Instagram Video İndirici</title>
+    <meta name="description" content="Instagram videolarını çevrimiçi indirin. Video bağlantısını yapıştırın ve videonuzu telefonunuza veya bilgisayarınıza kolayca indirin.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://instavideoyukle.com/">
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://instavideoyukle.com/">
-    <meta property="og:title" content="Instagram və TikTok Video Yüklə | InstaVideoYukle">
-    <meta property="og:description" content="Instagram və TikTok videolarını onlayn və pulsuz yüklə. Linki yapışdır, videonu endir.">
+    <meta property="og:title" content="Instagram Video İndir | InstaVideoYukle">
+    <meta property="og:description" content="Instagram videolarını çevrimiçi ve ücretsiz indirin. Bağlantıyı yapıştırın ve videonuzu indirin.">
     <meta property="og:site_name" content="InstaVideoYukle">
-    <meta property="og:locale" content="az_AZ">
-
-    <!-- AdSense -->
+    <meta property="og:locale" content="tr_TR">
+    <!-- AdSense kodu korundu -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6558836379736589" crossorigin="anonymous"></script>
-
-    <!-- CSS & Favicon -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" type="image/png">
-
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "InstaVideoYukle",
       "url": "https://instavideoyukle.com/",
-      "description": "Instagram və TikTok videolarını onlayn yükləmək üçün pulsuz video yükləyici.",
+      "description": "Instagram videolarını çevrimiçi indirmek için ücretsiz video indirme aracı.",
       "applicationCategory": "MultimediaApplication",
+      "inLanguage": "tr",
       "operatingSystem": "Android, iOS, Windows, macOS, Linux",
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "AZN"
+        "priceCurrency": "TRY"
       }
     }
     </script>
 </head>
 <body>
-
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo">▶</div>
-        <div class="brand"><span>Insta</span>VideoYukle</div>
-    </header>
-
-    <!-- MAIN -->
-    <main>
-        <section class="hero">
-            <h1>Instagram və TikTok Video Yüklə</h1>
-            <p class="subtitle">Instagram və TikTok video linkini aşağıya yapışdır və videonu asanlıqla yüklə.</p>
-
-            <!-- DOWNLOAD FORM -->
-            <form id="downloadForm">
-                <div class="input-container">
-                    <input
-                        type="url"
-                        id="urlInput"
-                        name="url"
-                        placeholder="Instagram və ya TikTok video linkini yapışdır..."
-                        autocomplete="off"
-                        required
-                    >
-                    <button type="button" id="pasteBtn">Yapışdır</button>
-                </div>
-
-                <button type="submit" id="mainSubmitBtn" class="btn-primary">
-                    🎬 Videonu tap
-                </button>
-            </form>
-
-            <!-- Loading -->
-            <div id="loading" style="display:none;">
-                <div class="loader"></div>
-                <p>Video hazırlanır...</p>
+<header class="header">
+    <div class="logo">▶</div>
+    <div class="brand"><span>Insta</span>VideoYukle</div>
+</header>
+<main>
+    <section class="hero">
+        <h1>Instagram Video İndir</h1>
+        <p class="subtitle">Instagram video bağlantısını aşağıya yapıştırın ve videonuzu kolayca indirin.</p>
+        <form id="downloadForm">
+            <div class="input-container">
+                <input
+                    type="url"
+                    id="urlInput"
+                    name="url"
+                    placeholder="Instagram video bağlantısını yapıştırın..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="button" id="pasteBtn">Yapıştır</button>
             </div>
-
-            <!-- Result -->
-            <div id="result" class="hidden">
-                <div id="resultText"></div>
-                <button type="button" id="downloadBtn" class="btn-primary hidden">
-                    ⬇️ Videonu yüklə
-                </button>
+            <button type="submit" id="mainSubmitBtn" class="btn-primary">
+                🎬 Videoyu Bul
+            </button>
+        </form>
+        <div id="loading" style="display:none;">
+            <div class="loader"></div>
+            <p>Video hazırlanıyor...</p>
+        </div>
+        <div id="result" class="hidden">
+            <div id="resultText"></div>
+            <button type="button" id="downloadBtn" class="btn-primary hidden">
+                ⬇️ Videoyu İndir
+            </button>
+        </div>
+    </section>
+    <section class="seo-content">
+        <h2>Instagram Video İndir</h2>
+        <p>Instagram videosu indirmek için Instagram uygulamasında videoyu açın. Paylaşım seçeneklerinden bağlantıyı kopyalayın ve yukarıdaki alana yapıştırın. Ardından <strong>“Videoyu Bul”</strong> düğmesine basın.</p>
+        <p>InstaVideoYukle, Instagram video bağlantılarıyla indirme işlemini kolaylaştırmak için hazırlanmış çevrimiçi bir araçtır. Telefon, tablet ve bilgisayar üzerinden kullanılabilir.</p>
+        <h2>Ücretsiz Instagram Video İndirici</h2>
+        <p>Ek bir uygulama yüklemeden Instagram video bağlantınızı ilgili alana yapıştırarak işlemi başlatabilirsiniz. İndirme olanağı, bağlantının desteklenmesine ve videoya erişim durumuna bağlıdır.</p>
+        <h2>Instagram Video İndirme Nasıl Çalışır?</h2>
+        <p>İndirmek istediğiniz videonun bağlantısını kopyalayın, InstaVideoYukle sayfasına yapıştırın ve “Videoyu Bul” düğmesine basın. Bağlantı destekleniyorsa ekranda gösterilen adımları izleyin.</p>
+    </section>
+    <section class="how-it-works">
+        <h2>Instagram Videosu Nasıl İndirilir?</h2>
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>Video bağlantısını kopyalayın</h3>
+                <p>Instagram uygulamasında indirmek istediğiniz videoyu açın ve bağlantısını kopyalayın.</p>
             </div>
-        </section>
-
-        <!-- SEO CONTENT -->
-        <section class="seo-content">
-            <h2>Instagram Video Yüklə</h2>
-            <p>Instagram video yükləmək üçün videonun linkini Instagram tətbiqindən kopyala və yuxarıdakı xanaya yapışdır. Daha sonra <strong>“🎬 Videonu tap”</strong> düyməsinə bas.</p>
-            <p>InstaVideoYukle Instagram videolarını onlayn yükləmək üçün hazırlanmış sadə və istifadəsi rahat video yükləyicidir.</p>
-
-            <h2>TikTok Video Yüklə</h2>
-            <p>TikTok video yükləmək üçün TikTok-da videonun paylaşma bölməsindən linki kopyala və bu səhifədəki xanaya yapışdır.</p>
-            <p>Linki əlavə etdikdən sonra video yükləmə prosesini başlatmaq üçün <strong>“🎬 Videonu tap”</strong> düyməsinə toxun.</p>
-
-            <h2>Pulsuz Onlayn Video Yükləyici</h2>
-            <p>InstaVideoYukle telefon, planşet və kompüterdən istifadə edilə bilən onlayn video yükləyicidir. Əlavə proqram quraşdırmadan video linkini yapışdıraraq yükləmə prosesini başlada bilərsən.</p>
-        </section>
-
-        <!-- HOW IT WORKS -->
-        <section class="how-it-works">
-            <h2>Videonu necə yükləmək olar?</h2>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-number">1</span>
-                    <h3>Video linkini kopyala</h3>
-                    <p>Instagram və ya TikTok-da yükləmək istədiyin videonun linkini kopyala.</p>
-                </div>
-                <div class="step">
-                    <span class="step-number">2</span>
-                    <h3>Linki yapışdır</h3>
-                    <p>Kopyaladığın video linkini yuxarıdakı sahəyə əlavə et.</p>
-                </div>
-                <div class="step">
-                    <span class="step-number">3</span>
-                    <h3>Videonu yüklə</h3>
-                    <p>“🎬 Videonu tap” düyməsinə toxun və videonu əldə et.</p>
-                </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>Bağlantıyı yapıştırın</h3>
+                <p>Kopyaladığınız bağlantıyı sayfanın üst kısmındaki alana yapıştırın.</p>
             </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="faq">
-            <h2>Tez-tez verilən suallar</h2>
-            <details>
-                <summary>Instagram videosunu necə yükləyə bilərəm?</summary>
-                <p>Instagram video linkini kopyala, bu səhifədəki link sahəsinə yapışdır və “🎬 Videonu tap” düyməsinə toxun.</p>
-            </details>
-            <details>
-                <summary>TikTok videosunu necə yükləyə bilərəm?</summary>
-                <p>TikTok-da videonun linkini kopyala və InstaVideoYukle saytındakı link sahəsinə yapışdır.</p>
-            </details>
-            <details>
-                <summary>InstaVideoYukle pulsuzdur?</summary>
-                <p>Saytın video yükləmə xidməti pulsuz istifadə üçün nəzərdə tutulub.</p>
-            </details>
-            <details>
-                <summary>Telefonda istifadə etmək mümkündür?</summary>
-                <p>Bəli. Sayt mobil cihazlarda da istifadə üçün hazırlanıb.</p>
-            </details>
-        </section>
-
-        <!-- NOTE -->
-        <section class="info">
-            <h2>Vacib məlumat</h2>
-            <p>InstaVideoYukle üçüncü tərəf sosial media platforması deyil və Instagram və TikTok ilə rəsmi şəkildə əlaqəli deyil.</p>
-            <p>Yalnız özünüzə aid olan və ya yükləməyə icazəniz olan məzmunlardan istifadə edin.</p>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 InstaVideoYukle.com</p>
-    </footer>
-
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>Videoyu indirin</h3>
+                <p>“Videoyu Bul” düğmesine basın ve destekleniyorsa ekrandaki adımları izleyin.</p>
+            </div>
+        </div>
+    </section>
+    <section class="faq">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <details>
+            <summary>Instagram videosunu nasıl indirebilirim?</summary>
+            <p>Video bağlantısını kopyalayın, bu sayfadaki alana yapıştırın ve “Videoyu Bul” düğmesine basın.</p>
+        </details>
+        <details>
+            <summary>InstaVideoYukle ücretsiz mi?</summary>
+            <p>InstaVideoYukle, video indirme aracını ücretsiz kullanabilmeniz amacıyla hazırlanmıştır.</p>
+        </details>
+        <details>
+            <summary>Siteyi cep telefonumdan kullanabilir miyim?</summary>
+            <p>Evet. Site cep telefonları, tabletler ve bilgisayarlarla kullanılabilecek şekilde tasarlanmıştır.</p>
+        </details>
+        <details>
+            <summary>Her Instagram videosunu indirebilir miyim?</summary>
+            <p>Her video desteklenmeyebilir. Özel hesaplar, erişim kısıtlamaları veya desteklenmeyen bağlantılar nedeniyle indirme başarısız olabilir.</p>
+        </details>
+        <details>
+            <summary>Video bağlantısı çalışmazsa ne yapmalıyım?</summary>
+            <p>Bağlantının doğru kopyalandığını kontrol edin. Sorun devam ederse bağlantı desteklenmiyor olabilir.</p>
+        </details>
+    </section>
+    <section class="info">
+        <h2>Önemli Bilgilendirme</h2>
+        <p>InstaVideoYukle, Instagram ile resmi olarak bağlantılı olmayan bağımsız bir web sitesidir.</p>
+        <p>Lütfen yalnızca size ait olan veya indirme iznine sahip olduğunuz içerikleri indirin. İçerikleri kullanırken ilgili platformun kurallarına ve telif haklarına uyun.</p>
+    </section>
+</main>
+<footer>
+    <p>© 2026 InstaVideoYukle.com</p>
+    <p><a href="/privacy.html">Gizlilik Politikası</a> | <a href="/contact.html">İletişim</a></p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
